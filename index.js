@@ -300,29 +300,42 @@ app.post("/users/logout", async (req, res) => {
 /************************************************************************************************************************************************/
 // Delete users by ID (ลบ users ผ่าน ID)
 app.delete("/users/delete", async (req, res) => {
-
   const id = parseInt(req.body.id);
 
-  // // ตรวจสอบว่าใส่ id หรือไม่
-  // if (!user.id) {
-  //   res.status(400).send({
-  //     status: "error",
-  //     message: "Please enter ID",
-  //   });
-  //   return;
-  // }
+  // ตรวจสอบว่ามี ID ที่ใส่ไปเป็นตัวเลขที่ถูกต้องหรือไม่
+  if (!id || isNaN(id)) {
+    res.status(400).send({
+      status: "error",
+      message: "Please provide a valid ID to delete a user",
+    });
+    return;
+  }
 
   // เชื่อม mongodb
   const client = new MongoClient(uri);
   await client.connect();
 
-  // ส่วน client
+  // ตรวจสอบว่ามีผู้ใช้ที่มี ID ตรงกับ ID ที่ระบุหรือไม่
+  const existingUser = await client
+    .db("database")
+    .collection("users")
+    .findOne({ id: id });
+
+  if (!existingUser) {
+    res.status(404).send({
+      status: "error",
+      message: "User with ID = " + id + " not found",
+    });
+    return;
+  }
+
+  // ลบผู้ใช้โดยใช้ ID
   await client.db("database").collection("users").deleteOne({ id: id });
 
   // ปิด client
   await client.close();
 
-  // แสดง ID ที่ทำการ delete 
+  // แสดง ID ที่ทำการ delete
   res.status(200).send({
     status: "ok",
     message: "User with ID = " + id + " is deleted",
