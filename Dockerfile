@@ -1,15 +1,20 @@
+# เลือกฐานเริ่มต้นของระบบเป็น Node.js
 FROM node:latest
 
-RUN mkdir -p /usr/src/app
+# กําหนดไดเรกทอรีที่จะใช้เก็บโค้ดของแอป
+WORKDIR /app
 
-WORKDIR /usr/src/app
+# คัดลอก package.json และ package-lock.json เพื่อติดตั้ง dependencies
+COPY package*.json ./
 
-COPY package.json /usr/src/app/
-
+# ติดตั้ง dependencies โดยใช้ npm
 RUN npm install
 
-COPY . /usr/src/app/
+# คัดลอกโค้ดทั้งหมดจากไดเรกทอรีปัจจุบันในคอนเทนเนอร์
+COPY . .
 
+# กําหนดพอร์ตที่ Express.js จะใช้ในการรันแอป
 EXPOSE 3000
 
-CMD [ "npm", "start" ]
+# คําสั่งที่ใช้ในการรันแอป
+CMD ["npm", "start"]
