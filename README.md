@@ -23,7 +23,9 @@ docker-compose up
 วิธีการใช้งานคือให้ใช้งานผ่าน Postman
 
 1.Create
+
 1.1) ให้ทำการปรับ method เป็น POST
+
 1.2) กรอก url
 
 ```bash
