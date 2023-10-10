@@ -18,6 +18,13 @@ cd API001
 docker-compose up
 ```
 
+PS.ถ้าทำการเปลี่ยนแปลง code
+ให้ทำการลบ container และ image เก่าทิ้ง หลังจากนั้น run
+
+```bash
+docker-compose up
+```
+
 ## How to use
 
 วิธีการใช้งานคือให้ใช้งานผ่าน Postman
