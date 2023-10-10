@@ -60,9 +60,7 @@ localhost:3000/users/create
 localhost:3000/users
 ```
 
-2.3) เลือก Body > raw > JSON
-
-2.4) กด Send
+2.3) กด Send
 
 ## 3.Get by ID
 
@@ -74,11 +72,9 @@ localhost:3000/users
 localhost:3000/users/1
 ```
 
-3.3) เลือก Body > raw > JSON
+3.3) กด Send
 
-3.4) กด Send
-
-## 4.Create
+## 4.Update
 
 4.1) ให้ทำการปรับ method เป็น PUT
 
@@ -106,19 +102,54 @@ localhost:3000/users/update
 
 4.5) กด Send
 
-## 5.Create
+## 5.Login
 
-5.1) ให้ทำการปรับ method เป็น DELETE
+5.1) ให้ทำการปรับ method เป็น POST
 
 5.2) กรอก url
+
+```bash
+localhost:3000/users/login
+```
+
+5.3) เลือก Body > raw > JSON
+
+4.4) เพิ่มข้อมูล (ตัวอย่าง)
+
+```bash
+{
+    "email": "test3@gmail.com",
+    "password": "1234",
+}
+```
+
+5.5) กด Send
+
+## 6.Logout
+
+6.1) ให้ทำการปรับ method เป็น POST
+
+6.2) กรอก url
+
+```bash
+localhost:3000/users/logout
+```
+
+6.3) กด Send
+
+## 7.Delete
+
+7.1) ให้ทำการปรับ method เป็น DELETE
+
+7.2) กรอก url
 
 ```bash
 localhost:3000/users/delete
 ```
 
-5.3) เลือก Body > raw > JSON
+7.3) เลือก Body > raw > JSON
 
-5.4) ใส่ id (ตัวอย่าง)
+7.4) ใส่ id (ตัวอย่าง)
 
 ```bash
 {
@@ -126,4 +157,4 @@ localhost:3000/users/delete
 }
 ```
 
-5.5) กด Send
+7.5) กด Send
