@@ -1,4 +1,4 @@
-# loginBasic
+# API
 
 เป็น API พื้นฐานที่จะมี ส่วนของ Login logout create get getbyid และ delete มาให้ โดยจะเป็น API ที่สร้างโดยใช้ ExpressJS และ MongoDB โดยจะลงผ่าน Docker สร้างเป็น container
 
