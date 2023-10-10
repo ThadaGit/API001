@@ -22,7 +22,7 @@ docker-compose up
 
 วิธีการใช้งานคือให้ใช้งานผ่าน Postman
 
-1.Create
+## 1.Create
 
 1.1) ให้ทำการปรับ method เป็น POST
 
@@ -33,6 +33,7 @@ localhost:3000/users/create
 ```
 
 1.3) เลือก Body > raw > JSON
+
 1.4) เพิ่มข้อมูล (ตัวอย่าง)
 
 ```bash
@@ -49,8 +50,10 @@ localhost:3000/users/create
 
 1.5) กด Send
 
-2.Get
+## 2.Get
+
 2.1) ให้ทำการปรับ method เป็น GET
+
 2.2) กรอก url
 
 ```bash
@@ -58,10 +61,13 @@ localhost:3000/users
 ```
 
 2.3) เลือก Body > raw > JSON
+
 2.4) กด Send
 
-3.Get by ID
+## 3.Get by ID
+
 3.1) ให้ทำการปรับ method เป็น GET
+
 3.2) กรอก url (ตัวอย่าง เราจะใส่เลข Id อะไรก็ได้)
 
 ```bash
@@ -69,10 +75,13 @@ localhost:3000/users/1
 ```
 
 3.3) เลือก Body > raw > JSON
+
 3.4) กด Send
 
-4.Create
+## 4.Create
+
 4.1) ให้ทำการปรับ method เป็น PUT
+
 4.2) กรอก url
 
 ```bash
@@ -80,6 +89,7 @@ localhost:3000/users/update
 ```
 
 4.3) เลือก Body > raw > JSON
+
 4.4) เพิ่มข้อมูล (ตัวอย่าง)
 
 ```bash
@@ -96,8 +106,10 @@ localhost:3000/users/update
 
 4.5) กด Send
 
-5.Create
+## 5.Create
+
 5.1) ให้ทำการปรับ method เป็น DELETE
+
 5.2) กรอก url
 
 ```bash
@@ -105,6 +117,7 @@ localhost:3000/users/delete
 ```
 
 5.3) เลือก Body > raw > JSON
+
 5.4) ใส่ id (ตัวอย่าง)
 
 ```bash
